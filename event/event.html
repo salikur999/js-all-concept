@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="constainer">
+        <h2>Hello</h2>
+        <ul id="imanges">
+            <li ><img src="./image/istockphoto-1273869409-1024x1024.jpg" alt="photoshop" width="200px" id="photo1"></li>
+            <li ><img src="./image/istockphoto-1289323170-1024x1024.jpg" alt="photoshop" width="200px" id="photo2"></li>
+            <li ><img src="./image/istockphoto-1316933933-1024x1024.jpg" alt="photoshop" width="200px" id="photo3"></li>
+            <li ><img src="./image/istockphoto-1301956836-1024x1024.jpg" alt="photoshop" width="200px" id="photo4"></li>
+            <a href="https://google.com" id="google">Google</a>
+        </ul>
+    </div>
+    <script>
+        //this a event prevented
+        document.getElementById('imanges').addEventListener('click', function(e){
+            // console.log('ul is clicked')
+        })
+        document.getElementById('photo1').addEventListener('click', function(e){
+            // console.log('photo1 is clicked')
+            // e.stopPropagation()
+        },false)
+        document.getElementById('google').addEventListener('click', function(e){
+            console.log('google click');
+            //e.preventDefault() is print a default value = 'google click'
+            e.preventDefault()
+            //e.stopPropagation() is stop next propagation value = (stop ) 'ul is clicked'
+            e.stopPropagation()
+        })
+
+        document.querySelector('#imanges').addEventListener('click', function(e)
+    {
+        console.log(e.target.tagName);
+       
+        
+        if(e.target.tagName === 'IMG')
+        {
+         let removef = e.target.parentNode
+         removef.remove()
+        }
+    })
+
+    </script>
+</body>
+</html>

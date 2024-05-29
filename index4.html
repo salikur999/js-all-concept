@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: aqua; align-items: center;">
+    
+</body>
+<script>
+   const div = document.createElement('div')
+   div.className = 'first'
+   div.id = Math.floor(Math.random()*10+1)
+   div.setAttribute('title', 'First Document')
+   div.style.textAlign = 'center'
+   div.style.fontSize = '20px'
+   div.style.padding = '20px'
+  const addtext = document.createTextNode('TimberLand')
+  div.appendChild(addtext)
+  document.body.appendChild(div)
+
+  function createElement(item)
+  {
+     const li = document.createElement('li')
+     li.appendChild(document.createTextNode(item))
+     document.querySelector('.first').appendChild(li)
+  }
+
+  createElement('Model:- 13328j')
+  createElement('Model:- 3309ej')
+  createElement('Model:- 48480j')
+  createElement('Model:- 44455j')
+//edit element
+  const second = document.querySelector('li:nth-child(2)')
+  second.outerHTML ='<li>Model:- 55555j</li>'
+
+//remove element
+  const first = document.querySelector('li:first-child')
+  first.remove()
+
+  
+</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgba(181, 182, 202, 0.933); color: #fff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+    <script>
+        //create element 
+        function addlanguage (addLang)
+        {
+           const li = document.createElement('li')
+            li.appendChild(document.createTextNode(addLang))
+            document.querySelector('.language').appendChild(li)
+        }
+        addlanguage('JavaScript')
+        addlanguage('C++')
+        addlanguage('C')
+        addlanguage('Java')
+    
+
+        //Edit text element
+        // const secondLang = document.querySelector('li:nth-child(2)')
+        // const newli = document.createElement('li')
+        // newli.textContent ='Mojo'
+        // secondLang.replaceWith(newli)
+
+        //Edit
+        const firstEdit = document.querySelector('li:first-child')
+        firstEdit.outerHTML = '<li>Html</li>'
+
+        const lastremove = document.querySelector('li:last-child')
+        lastremove.remove()
+
+        // const firstcolor = document.querySelector('li')
+        // firstcolor.style.color = 'red'
+        // const secondcolor = document.querySelector('li:nth-child(2)')
+        // secondcolor.style.color =  'green'
+        
+        function changecolor(location, color)
+        {
+            const setcolor = document.querySelector(location)
+            setcolor.style.color = color
+        }
+        changecolor('li:first-child', 'red')
+        changecolor('li:nth-child(2)', 'blue')
+        changecolor('li:nth-child(3)', 'maroon')
+
+    </script>
+</html>

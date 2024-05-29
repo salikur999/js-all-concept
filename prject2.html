@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just fun</title>
+</head>
+<body style="background-color: rgb(130, 190, 170);">
+    <div style="width: 300px; border: 2px solid black; box-shadow: 5px 6px 6px black; color: white; background-color: #1f1e1e; margin: 20px auto; border-radius: 5px;">
+        <form style="padding: 10px;">
+            <label style="display: flex; padding-bottom: 4px; font-weight: bold;">Your amount:</label>
+            <input type="text" id="inputValue">
+            <label style="display: flex; padding-bottom: 4px; padding-top: 4px; font-weight: bold;">Your Text:</label>
+            <input type="text" id="inputText">
+            <button type="submit" style="display: flex; background-color: black; color: aliceblue; font-weight: bold; box-shadow: 4px 4px 4px black; margin: 5px 30px;">Submit</button>
+        </form>
+    </div>
+    <div style="width: 300px; border: 2px solid black; box-shadow: 5px 6px 6px black; color: white; background-color: #1f1e1e; margin: 20px auto; border-radius: 5px;">
+        <div class="result" > </div>
+
+</body>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e)
+    {
+        e.preventDefault()
+        const inputvalue = parseFloat(document.getElementById('inputValue').value)
+        const inputText = document.getElementById('inputText').value
+        const result = document.querySelector('.result')
+
+
+        result.innerHTML = `<p>Hello</p>`
+
+        if(isNaN(inputvalue))
+        {
+            result.innerHTML = `<h3 style="font-weight: bold;">NOt a valid Number</h3>`
+        }
+        else
+        {
+            for (let i = 1; i <=inputvalue; i++) {
+            result.innerHTML += `<p style="font-weight: bold;">${i}. ${inputText.toUpperCase()}</p>`
+}
+        }
+    })
+    </script>
+</html>

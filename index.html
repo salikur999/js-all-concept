@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(92, 120, 120); padding: 10px;">
+    <div class="prante">
+        <div class="day">1st day</div>
+        <div class="day">2nd day</div>
+        <div class="day">3th day</div>
+    </div>
+</body>
+<script>
+ const doc =document.querySelector('.prante')
+//  console.log(doc);
+ doc.children[1].style.color = 'orange'
+//  for (let i = 0; i < doc.length; i++) {
+//     const element = doc[i];
+//     console.log(element);
+    
+//  }
+doc.firstElementChild.style.color = '#eeee'
+
+// console.log(doc.firstElementChild)
+// console.log(doc.lastElementChild)
+
+const child = document.querySelector('.day')
+console.log(child.parentElement)
+console.log(child.nextElementSibling)
+
+console.log('NODES:-' ,doc.childNodes);
+
+</script>
+</html>
