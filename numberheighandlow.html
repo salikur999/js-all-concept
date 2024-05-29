@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number heigh low mid</title>
+</head>
+<body style="background-color: rgb(118, 187, 187);">
+    <div class="constainer" style="width: 400px; border: 2px solid black; padding: 10px; margin: 20px auto; background-color: #413f3f; color: #fff; box-shadow: 4px 5px 7px black; border-radius: 5px; font-weight: bold;">
+        <form>
+        <p><label>1st number input:</label> <input type="text" id="first"></p>
+        <p><label>2nd number input:</label> <input type="text" id="second"></p>
+        <p><label>3rd number input:</label> <input type="text" id="third"></p>
+        <button type="submit" style="background-color: black;
+        color: aliceblue; font-size: 16px; box-shadow: 4px 5px 7px black; font-weight: bold;">Submit</button>
+        
+        </form>
+        </div>
+    </div>
+    <div class="result" style="width: 400px; border: 2px solid black; padding: 10px; margin: 20px auto; background-color: #817d7d; color: #fff; box-shadow: 4px 5px 7px black; border-radius: 5px;">
+    <h3>Output is:</h3>
+    </div>
+</body>
+<script>
+   
+   document.querySelector('form')
+    .addEventListener('submit', function(e)
+{
+
+
+    e.preventDefault()
+    const firstid = parseFloat(document.getElementById('first').value)
+    const secondid = parseFloat( document.getElementById('second').value)
+    const thirdid = parseFloat(document.getElementById('third').value)
+    const resultshow = document.querySelector('.result')
+
+    resultshow.innerHTML = `<p>Final Result is:</p>`
+
+
+    if(isNaN(firstid) )
+    {
+        resultshow.innerHTML = `First number is not a valid `
+    }
+    else if(isNaN(secondid))
+    {
+        resultshow.innerHTML = `Second number is not a valid `
+    }
+    else if(isNaN(thirdid))
+    {
+        resultshow.innerHTML = ` Third number is not a valid `
+    }
+    else
+    {
+    //     function cal (firstid ,mid , heigh)
+    // {
+    //     const heighnumber = Math.max(firstid, mid, heigh)
+    //     const lownumber = Math.min(firstid, mid, heigh)
+    //     const midnumber = firstid + mid + heigh - heighnumber -lownumber
+    //     console.log('heigh:',heighnumber);
+    //     console.log('lownumber:', lownumber);
+    //     console.log('midnumber:', midnumber);
+    // }
+
+    const heighnumber = Math.max(firstid, secondid, thirdid)
+    const lownumber = Math.min(firstid, secondid, thirdid)
+    const midnumber = firstid + secondid + thirdid - heighnumber - lownumber
+    resultshow.innerHTML += `<p>Height number is: ${heighnumber}</p>`
+    resultshow.innerHTML += `<p>Mid number is: ${midnumber}</p>`
+    resultshow.innerHTML += `<p>low number is: ${lownumber}</p>`
+  }
+
+    
+})
+  
+</script>
+</html>

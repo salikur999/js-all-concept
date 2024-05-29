@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: grey;">
+   <div class="Pagediv" style="background-color: #1c042c; width: 300px; align-items: center; margin: 20px auto; padding: 10px 5px 5px 10px;  border-radius: 7px; color: #fff;">
+    <nav>
+        <a href="/" aria-current="page" style="gap: 5px; padding: auto;font-size: 19px; border-radius: 5px; font-weight: bold; color: #746e6e;">Home</a>
+     <a href="https://www.facebook.com/" style="font-weight: bold; font-size: 19px; padding-left: 10px; color: #746e6e;"> Facebook</a>
+    </nav>
+    <div class="constainer">
+        <form>
+            <p><label>Height in CM:</label><input type="text" id="height"></p>
+            <p><label> Weight is KG:</label><input type="text" id="weight"></p>
+            <button style="margin-left:30%; font-size: 15px; font-weight: bold;">CALCULATE</button>
+            <div id="result" style="color: rgb(252, 250, 250);"></div>
+            <div class="ResultDiv">
+                <h3 id="value">Under weight = Less then 16.6</h3>
+                <h3 id="value">NOrmal Range = 16.6 and 24.9</h3>
+                <h3 id="value">Overweigh = Greater then 24.9</h3>
+            </div>
+        </form>
+    </div>
+   </div>
+   <script src="/project2/index.js"></script>
+</body>
+</html>

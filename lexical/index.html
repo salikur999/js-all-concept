@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lexical scope</title>
+</head>
+<body>
+    <button id="orangered">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+//     document.getElementById('orangered').onclick=function()
+// {
+//     document.body.style.backgroundColor = 'orangered'
+// }
+// document.getElementById('green').onclick=function()
+// {
+//     document.body.style.backgroundColor = 'green'
+// }
+
+function changecolor(color)
+{
+   return  function inner()
+    {
+        document.body.style.backgroundColor = `${color}`
+    }
+    // return inner
+    
+}
+document.querySelector('#orangered').onclick = changecolor('orangered')
+document.querySelector('#green').onclick = changecolor('green')
+</script>
+</html>

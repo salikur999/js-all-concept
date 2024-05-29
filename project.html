@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number and provide a real answer</title>
+</head>
+<body>
+    <div class="conteiner" style="width: 400px; background-color: #dddd; margin: 20px auto; padding: 20px 0px 20px;" >
+        <h1 style="padding: 20px;">Number Guessing Game</h1>
+        <div class="result">
+            <form class="form" style="margin-left: 20px;">
+                <div class="massageBox"></div>
+                <input type="submit" id="subt" value="submit value" class="guessSubmit">
+            </form>
+        </div>
+    </div>
+    <script>
+
+        const result = document.querySelector('.result')
+        const numberinp = document.querySelector('.guessField')
+        const massageBox = document.querySelector('.massageBox')
+
+        const submit = document.querySelector('#subt')
+        const p = document.createElement('p')
+
+
+   
+          
+        for(let i= 0; i<6; i++)
+        {
+            const randominteger = Math.floor(Math.random()* 100 +1)
+
+
+            let data = ['x',]
+
+
+            const operator = ['+', '-', '*', '/']
+            const randomoperator = Math.floor( Math.random()*operator.length) 
+            const randomindex = operator[randomoperator]
+            let randomvalue = `${randomindex} ${randominteger}`
+
+            console.log(randomvalue);
+            data.push(randomvalue)
+            console.log(data);
+            calculate(data)
+            'x' = data
+        }
+
+
+        function calculate(data)
+        {
+            for (let i = 1; i < data.length; i+2) {
+                let result =[]
+                const operator = data[i]
+                const operand = data[i+1]
+
+                switch (operator) {
+                    case '+':
+                        result += operand
+                        break;
+                    case '-':
+                        result -= operand
+                        break;
+                    case '*':
+                        result *= operand
+                        break;
+                    case '/':
+                       
+                        if(operand !==0)
+                        {
+                            result /= operand
+                        }
+                        else{
+                            throw new Error('Divide by zero')
+                        }
+                        break;
+                    default:
+                        throw new Error('Error')
+                        break;
+                }
+                
+            }
+            return result
+        }
+
+       
+    </script>
+</body>
+</html>
